@@ -1,10 +1,11 @@
-package pl.jawegiel.mvpwithlocation;
+package pl.jawegiel.mvpappwithlocation;
 
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 
@@ -28,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import pl.jawegiel.mvpappwithlocation.R;
 import pl.jawegiel.mvpappwithlocation.presenter.PresenterNavigationView;
 import pl.jawegiel.mvpappwithlocation.presenter.PresenterTextView;
 import pl.jawegiel.mvpappwithlocation.utility.Util;
@@ -146,8 +146,9 @@ public class MainActivity extends AppCompatActivity implements ViewMvpLocation, 
                 getLonLatFromNmeaFormat(errorMessage);
                 createToastAndSetButtonsEnabledIfConditionsMet();
                 googleMap.addMarker(new MarkerOptions().position(new LatLng(receiversCoords.get(LAT), receiversCoords.get(LON))).title(util.getStr(R.string.receiver)));
-            } else
+            } else {
                 util.createToast(util.getStr(R.string.error_occured) + " " + errorMessage).show();
+            }
         });
     }
 

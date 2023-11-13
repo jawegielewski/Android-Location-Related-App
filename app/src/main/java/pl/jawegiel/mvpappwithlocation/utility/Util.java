@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,10 +32,12 @@ import pl.jawegiel.mvpappwithlocation.view.ViewMvpLocation;
 
 public class Util implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
+    private static final String LOG = Util.class.getSimpleName();
+
     private static final int REQUEST_LOCATION = 1;
     public static final int LAT = 0;
     public static final int LON = 1;
-    private static final String FILE_NAME = "geotronics_app_log.txt";
+    private static final String FILE_NAME = "app_log.txt";
 
     private boolean stopHandler = false;
     private List<Double> myCoords = new ArrayList<>();
@@ -146,10 +149,14 @@ public class Util implements GoogleApiClient.ConnectionCallbacks, GoogleApiClien
     }
 
     public void writeToFile(StringBuilder log_line) throws IOException {
-        FileOutputStream fos = activity.openFileOutput(FILE_NAME, Context.MODE_APPEND);
-        OutputStreamWriter osw = new OutputStreamWriter(fos);
-        osw.write(log_line.toString() + "\r\n");
-        osw.flush();
-        osw.close();
+        try {
+            FileOutputStream fos = activity.openFileOutput(FILE_NAME, Context.MODE_APPEND);
+            OutputStreamWriter osw = new OutputStreamWriter(fos);
+            osw.write("abc" + "\r\n");
+            osw.flush();
+            osw.close();
+        } catch (Exception ex) {
+            Log.e(LOG, "Exception during writing to file: " + ex.getMessage());
+        }
     }
 }
