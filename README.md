@@ -9,4 +9,4 @@ Android. An app which wchich aims are to do some location related work:
 5) possibility to log every second such record: [TIME] , [USER_LOCATION], [RECEIVER_LOCATION],
 [DISTANCE_VECTOR] to internal memory 
 
- App uses uses REST, location and operation on Google Maps. App made with comply of MVP pattern.
+ App uses REST, location and operation on Google Maps. App made with comply of MVP pattern.
