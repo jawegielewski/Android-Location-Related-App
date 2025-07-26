@@ -9,4 +9,4 @@ An app which which main purpose is to do some location related work:
 5) possibility to log every second such record: [TIME] , [USER_LOCATION], [RECEIVER_LOCATION],
 [DISTANCE_VECTOR] to internal memory 
 
- App uses REST, location and operations on Google Maps. App complies with MVP pattern.
+ App uses Rest API, location services and operations on Google Maps. App complies with MVP pattern.
