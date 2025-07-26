@@ -1,6 +1,6 @@
-# AndroidMvpAppWithLocation
+# Android Location Related App
 
-Android. An app which wchich aims are to do some location related work:
+An app which which main purpose is to do some location related work:
 
 1) sets user's longitude and latitude,
 2) gets specific receiver location,
